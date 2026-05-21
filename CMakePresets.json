@@ -1,0 +1,52 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 28,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "debug",
+      "displayName": "Debug",
+      "description": "CLion-friendly debug preset for Gobang Qt",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/cmake-build-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      }
+    },
+    {
+      "name": "windows-qt5-mingw",
+      "displayName": "Windows Qt 5.15.2 MinGW",
+      "description": "Use the local Qt 5.15.2 + MinGW toolchain on Windows",
+      "inherits": "debug",
+      "binaryDir": "${sourceDir}/cmake-build-windows-qt5",
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      },
+      "environment": {
+        "PATH": "D:/Qt/Tools/mingw810_64/bin;$penv{PATH}"
+      },
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "D:/Qt/Tools/mingw810_64/bin/g++.exe",
+        "CMAKE_MAKE_PROGRAM": "D:/CLion 2026.1/bin/ninja/win/x64/ninja.exe",
+        "CMAKE_PREFIX_PATH": "D:/Qt/5.15.2/mingw81_64",
+        "Qt5_DIR": "D:/Qt/5.15.2/mingw81_64/lib/cmake/Qt5"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "debug",
+      "configurePreset": "debug"
+    },
+    {
+      "name": "windows-qt5-mingw",
+      "configurePreset": "windows-qt5-mingw"
+    }
+  ]
+}
