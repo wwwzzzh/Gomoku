@@ -1,0 +1,64 @@
+# ========== 构建产物 ==========
+build-verify/
+server/build/
+build/
+cmake-build-*/
+cmake-build-*/*
+*.o
+*.obj
+*.exe
+*.out
+*.app
+
+# ========== CMake 生成缓存 ==========
+CMakeCache.txt
+cmake_install.cmake
+CMakeFiles/
+CMakeScratch/
+CTestTestfile.cmake
+CMakeUserPresets.json
+build.ninja
+.ninja_log
+.ninja_deps
+*.ninja
+DartConfiguration.tcl
+
+# ========== Qt 自动生成文件 ==========
+*_autogen/
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+*.moc
+
+# ========== IDE 配置 ==========
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.qtc_clangd/
+.qt/
+CMakeLists.txt.user
+CMakeLists.txt.user.*
+qtcsettings.cmake
+
+# ========== macOS 系统文件 ==========
+__MACOSX/
+.DS_Store
+._*
+
+# ========== 数据库文件（运行生成） ==========
+*.db
+*.sqlite
+
+# ========== 编译中间产物 ==========
+*.pdb
+*.ilk
+*.idb
+*.pch
+*.sdf
+*.ipch
+*.tlog
+*.lastbuildstate
+*.log
